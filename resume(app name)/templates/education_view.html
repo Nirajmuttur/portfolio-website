@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <h1>Education</h1>
+    <div class="row">
+    {% for education in resume %}
+        <div class="col-md-4">
+            <div class="card mb-2">
+                {% load static %} # path of staticfiles should be added in settings so that we can use them
+
+                <img class="card-img-top"  src="{% static education.img %}" width="18rem" height="200rem">
+                <div class="card-body card text-white bg-dark mb-3 ">
+                    <h5 class="card-title">{{ education.title }}</h5>
+                    <p class="card-text">{{ education.std }}</p>
+                    <p class="card-text">{{ education.result }}</p>
+
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

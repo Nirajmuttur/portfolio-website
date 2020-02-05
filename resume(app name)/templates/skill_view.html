@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <h1>Skills</h1>
+        <div class="row">
+        {% for skill in resume %}
+            <div class="col-md-4">
+                <div class="card mb-2">
+
+                    <div class="card-body">
+                        <p class="card-text">Programming :{{ skill.program }}</p>
+                        <p class="card-text">Database :{{ skill.data }}</p>
+                        <p class="card-text">Version control :{{ skill.version }}</p>
+                        <p class="card-text">Development :{{ skill.develop }}</p>
+
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock %}
